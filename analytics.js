@@ -2,7 +2,7 @@ export function calculateClassAverage(students,courseId){
     let total=0;
     let count=0;
       for(let i=0;i<students.length;i++){
-        const foundCourse=students[i].courses.find(c=>c.coursId===courseId);
+        const foundCourse=students[i].courses.find(c=>c.courseId===courseId); //used the find() array method to find the registered students in this course to calculare the course average
         if(foundCourse){
             total+=foundCourse.grade;
             count++;
@@ -16,5 +16,5 @@ export function findTopStudent(students){
 }
 
 export function filterStudents(students,criteriaFn){
-    return students.filter(criteriaFn);
+    return students.filter(criteriaFn); //used filter() array method to filter the students how meet the citeriaFn function
 }

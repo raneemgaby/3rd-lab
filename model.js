@@ -1,11 +1,10 @@
 export class Student{
     constructor(id,name,courses=[]){
-        Object.defineProperity(this,'id',{
+        Object.defineProperity(this,'id',{ //define the id as a read-only property and non-writable or configurable
             value:id,
             writable:false,
             configurable:false,
         });
-        this.id=id;
         this.name=name;
         this.courses=courses;
     }

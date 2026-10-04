@@ -1,8 +1,9 @@
-import Student from './model.js';
-import fetchStudents from './database';
+import {Student} from './model.js';
+import {fetchStudents} from './database.js';
 import {calculateClassAverage,findTopStudent,filterStudents} from './analytics.js'; 
-fetchStudents(rawStudents =>{
-    const students=rawStudents.map(s=>new Student (s.id,s.name,s.courses));
+
+fetchStudents(rawData =>{
+    const students=rawData.map(s=>new Student (s.id,s.name,s.courses)); //commit changes to students array to make each elen=ment of it an object with it's own properities
 
     console.log("Testing Immutibility:");
     console.log("Original ID:",students[0].id);
@@ -16,6 +17,6 @@ fetchStudents(rawStudents =>{
     const topStudent=findTopStudent(students);
     console.log(`Top Student: ${topStudent.name} (Average: ${topStudent.getAverage()})`);
 
-    const course102Students=filterStudents(students,s=>s.courses.some(c=>c.courseId===102));
+    const course102Students=filterStudents(students,s=>s.courses.some(c=>c.courseId===102)); //uses some() array method to check if the student is enrolled in course 102
     console.log(`Students in course 102: ${course102Students.map(s=>s.name).join(", ")}`);
 });
