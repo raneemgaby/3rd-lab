@@ -8,5 +8,5 @@ export function fetchStudents(callback){
     console.log("Fetching Students...");
     setTimeout( () => {
         callback(students_ata);
-    },2000); //changed the 2 sice it millisecinds
+    },2000); 
 }

@@ -1,7 +1,7 @@
 import Student from './model.js';
 import fetchStudents from './database';
-import {calculateClassAverage,findTopStudent,filterStudents} from './analytics.js';
-fetchStudents((rawStudents))=>{
+import {calculateClassAverage,findTopStudent,filterStudents} from './analytics.js'; 
+fetchStudents(rawStudents =>{
     const students=rawStudents.map(s=>new Student (s.id,s.name,s.courses));
 
     console.log("Testing Immutibility:");
@@ -18,4 +18,4 @@ fetchStudents((rawStudents))=>{
 
     const course102Students=filterStudents(students,s=>s.courses.some(c=>c.courseId===102));
     console.log(`Students in course 102: ${course102Students.map(s=>s.name).join(", ")}`);
-}
+});
