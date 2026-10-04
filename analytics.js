@@ -1,15 +1,14 @@
 export function calculateClassAverage(students,courseId){
     let total=0;
-    let average=0;
     let count=0;
       for(let i=0;i<students.length;i++){
-        if(students[i].courses===courseId){
-            total+=students[i].grade;
+        const foundCourse=students[i].courses.find(c=>c.coursId===courseId);
+        if(foundCourse){
+            total+=foundCourse.grade;
             count++;
         }
     }
-     average=total/count;
-     return average;
+    return count > 0 ? total / count : 0;
 }
 
 export function findTopStudent(students){
