@@ -4,9 +4,9 @@ const students_ata=[
   { id: 3, name: "Ahmet", courses: [{ courseId: 101, grade: 60 }, { courseId: 102, grade: 55 }] }
 ]
 
-function fetchStudents(callback){
+export function fetchStudents(callback){
     console.log("Fetching Students...");
     setTimeout( () => {
         callback(students_ata);
-    },2);
+    },2000); //changed the 2 sice it millisecinds
 }

@@ -1,5 +1,5 @@
 export class Student{
-    constructor(id,name,courses){
+    constructor(id,name,courses=[]){
         Object.defineProperity(this,'id',{
             value:id,
             writable:false,
